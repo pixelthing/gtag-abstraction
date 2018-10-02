@@ -1,0 +1,57 @@
+<html>
+<head>
+
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-110521650-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-110521650-2', {
+            'anonymizeIp'       : true,                         // GDPR helper, we don't need or want PII, we just need guidance on how people use the site in general
+            'link_attribution'  : {                             // tries to seperate link attribution on a page, especially handy on an SPA
+                'levels'        : 4
+            },
+            'transport_type'    : 'beacon',                     // used in newer browser - allows better "onunload" events
+            'page'              : window.location.pathname      // removes all "?=xxxxxx" parameters to provide a clearer view of page hits (also helps remove some GDPR stuff from data)
+        });
+    </script>
+
+    <script async src="analytics.js"></script>
+
+
+
+</head>
+<body>
+
+
+<div id="quiz-0" >
+
+    <button type="button" class="menu-toggle"> test button </button>
+
+</div>
+
+</body>
+</html>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            mounted: true,
+            appStep: 'step-0'
+        },
+        methods: {
+            startTest: function () {
+                this.appStep = 'step-1'
+            }
+        }
+    });
+</script>
+
+<div id=“quiz-0” class="quiz module" v-bind:class="[ { 'mounted' : mounted }, appStep ]">
