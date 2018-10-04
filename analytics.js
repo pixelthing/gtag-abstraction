@@ -422,14 +422,14 @@ var gaAbstract = (function() {
                 var score = $score.text().trim();
                 sendEvent( false, false, {'event_action':'view score', 'event_category':'quiz-spel:resultat','event_label':score});
             }
-        },1000);
+        },500);
 
     };
 
     var checkSubjects = function( ev ) {
 
         var thatEvent = ev;
-        setTimeout( function () {
+        setTimeout( function () { 
 
             var $target = jQuery(thatEvent.target);
             if ( $target.hasClass('hide-info') ) {
