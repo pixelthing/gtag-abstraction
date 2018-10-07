@@ -293,9 +293,9 @@ var gaAbstract = (function() {
             return;
         }
         // send GA event
-        //gtag('event', selectorAction, selectorObj);
+        gtag('event', selectorAction, selectorObj);
         // debug
-        console.warn( 'DEBUG ANALYTICS: ', selectorAction, selectorObj )
+        //console.warn( 'DEBUG ANALYTICS: ', selectorAction, selectorObj )
     };
 
     var registerSwipeEvent = function () {
