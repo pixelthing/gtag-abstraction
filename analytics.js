@@ -276,7 +276,7 @@ var gaAbstract = (function() {
     var sendEvent = function( selectorKey, ev, selectorObj ) {
 
         var selectorObj = selectorObj || eventSelectors[ selectorKey ];
-        var selectorAction = ev.type;
+        var selectorAction = ev.type || selectorObj['event_action'];
 
         // add timing
         var timeNow = Math.round(+new Date()/1000);
@@ -295,7 +295,7 @@ var gaAbstract = (function() {
         // send GA event
         gtag('event', selectorAction, selectorObj);
         // debug
-        //console.warn( 'DEBUG ANALYTICS: ', selectorAction, selectorObj )
+        //console.log( 'DEBUG ANALYTICS: ', selectorAction, selectorObj )
     };
 
     var registerSwipeEvent = function () {
